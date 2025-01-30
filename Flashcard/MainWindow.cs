@@ -16,6 +16,7 @@ namespace Flashcard
         {
             InitializeComponent();
             createSet1.Hide();
+            reviewSet1.Hide();
             BackBttn.Hide();
         }
 
@@ -24,17 +25,34 @@ namespace Flashcard
             BackBttn.Show();
             createSet1.Show();
             createSet1.BringToFront();
+            ReviewBttn.Hide();
+            CreateBttn.Hide();
+            QuitBttn.Hide();
+        }
+
+        private void review_Click(object sender, EventArgs e)
+        {
+            BackBttn.Show();
+            reviewSet1.Show();
+            reviewSet1.BringToFront();
+            ReviewBttn.Hide();
+            CreateBttn.Hide();
+            QuitBttn.Hide();
         }
 
         private void back_Click(object sender, EventArgs e)
         {
             BackBttn.Hide();
             createSet1.Hide();
+            reviewSet1.Hide();
+            ReviewBttn.Show();
+            CreateBttn.Show();
+            QuitBttn.Show();
         }
 
-        private void displayHome()
+        private void quit_Click(object sender, EventArgs e)
         {
-            InitializeComponent();
+            Application.Exit();
         }
     }
 }
